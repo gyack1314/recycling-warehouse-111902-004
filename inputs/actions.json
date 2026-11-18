@@ -1,0 +1,63 @@
+[
+  {
+    "step": 1,
+    "table": "decisions",
+    "op": "append",
+    "row": {
+      "id": "D3",
+      "kind": "revoke",
+      "left": null,
+      "right": null,
+      "scope": {},
+      "revokes": "D2"
+    }
+  },
+  {
+    "step": 2,
+    "table": "decisions",
+    "op": "append",
+    "row": {
+      "id": "D4",
+      "kind": "different",
+      "left": "A1",
+      "right": "B1",
+      "scope": {
+        "episodes": [
+          "A1",
+          "B1"
+        ]
+      },
+      "revokes": null
+    }
+  },
+  {
+    "step": 3,
+    "table": "identifiers",
+    "op": "append",
+    "row": {
+      "namespace": "unknown",
+      "external": "17",
+      "episode": "U1",
+      "station": "S",
+      "valid_from": "2026-08-01",
+      "valid_to": null
+    }
+  },
+  {
+    "step": 4,
+    "table": "decisions",
+    "op": "append",
+    "row": {
+      "id": "D5",
+      "kind": "same",
+      "left": "U1",
+      "right": "B1",
+      "scope": {
+        "facts": [
+          "F4"
+        ]
+      },
+      "revokes": null
+    }
+  }
+]

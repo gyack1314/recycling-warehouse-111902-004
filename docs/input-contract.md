@@ -1,0 +1,11 @@
+# 原始资料契约
+
+所有机构、车辆、单据和设备均为本地合成，不来自新闻中的真实企业，也不声称新闻发生过这些事件。
+
+namespace/external/episode界定一段外部身份，valid区间左闭右开，空valid_to为未给结束。相同字符串不跨namespace自动相等，复用的站内编号也不合并不同episode。事实fact全局稳定，kind为原始事实类型，value仅供回查，不表示可以跨kind求和。
+decisions是业务人员提出的有依据确认，same/different作用范围只限scope：episodes指定整段外部身份，facts指定明确事实。revoke只撤销指定决议；未受影响的其他确认继续有效。对相同范围矛盾的same/different不能按抵达顺序选一边。未明确关联的外部身份可以建立独立候选，不因存在候选就断言设备同一。
+统一维键由仓库负责，但不应因文件重排重发改变；旧键查当前结果时，一对多拆分要明确返回分歧而不是任取一个。输入没有预分配统一维键，facts与decisions不是已处理结果。
+
+seed.json与同名Parquet保存相同的输入值，actions.json中的后续动作尚未处理。inventory.json只校验原件物理完整性，不是仓库目录或业务结论。所有后续仓表与接口均待开发，源码不规定其架构。
+
+scope中未使用的字段明确为null，与未声明同义，不扩大确认范围。

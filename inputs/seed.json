@@ -1,0 +1,99 @@
+{
+  "identifiers": [
+    {
+      "namespace": "vendor-A",
+      "external": "SN17",
+      "episode": "A1",
+      "station": "N",
+      "valid_from": "2026-01-01",
+      "valid_to": null
+    },
+    {
+      "namespace": "vendor-B",
+      "external": "SN17",
+      "episode": "B1",
+      "station": "S",
+      "valid_from": "2026-01-01",
+      "valid_to": null
+    },
+    {
+      "namespace": "station-N",
+      "external": "17",
+      "episode": "N-old",
+      "station": "N",
+      "valid_from": "2026-01-01",
+      "valid_to": "2026-07-01"
+    },
+    {
+      "namespace": "station-N",
+      "external": "17",
+      "episode": "N-new",
+      "station": "N",
+      "valid_from": "2026-07-01",
+      "valid_to": null
+    }
+  ],
+  "facts": [
+    {
+      "fact": "F1",
+      "kind": "weigh",
+      "namespace": "station-N",
+      "external": "17",
+      "at": "2026-06-01",
+      "value": "10"
+    },
+    {
+      "fact": "F2",
+      "kind": "service",
+      "namespace": "vendor-A",
+      "external": "SN17",
+      "at": "2026-08-01",
+      "value": "1"
+    },
+    {
+      "fact": "F3",
+      "kind": "repair",
+      "namespace": "vendor-B",
+      "external": "SN17",
+      "at": "2026-08-01",
+      "value": "1"
+    },
+    {
+      "fact": "F4",
+      "kind": "weigh",
+      "namespace": "unknown",
+      "external": "17",
+      "at": "2026-08-01",
+      "value": "7"
+    }
+  ],
+  "decisions": [
+    {
+      "id": "D1",
+      "kind": "same",
+      "left": "A1",
+      "right": "N-old",
+      "scope": {
+        "episodes": null,
+        "facts": [
+          "F1"
+        ]
+      },
+      "revokes": null
+    },
+    {
+      "id": "D2",
+      "kind": "same",
+      "left": "A1",
+      "right": "B1",
+      "scope": {
+        "episodes": [
+          "A1",
+          "B1"
+        ],
+        "facts": null
+      },
+      "revokes": null
+    }
+  ]
+}
